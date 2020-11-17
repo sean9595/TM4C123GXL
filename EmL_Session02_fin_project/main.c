@@ -19,8 +19,10 @@ int main(void)
 {
     SYSCLK_80MHz();
     SysTick_Init(2400); // 1/30 sec (30Hz).
+
     PortE_Init();
     ADC0_PortE_Init();
+
     EnableInterrupts();
 
     while (1)
@@ -39,9 +41,10 @@ int main(void)
 void SysTick_Handler(void)
 {
     /*ADC routine*/
-    ADC_Data = ADC0_InSeq3();
-    if (ADC_Data != /*mean value*/){
-        ADC_2_LCD = ADC_Data;
+    ADC0_InSeq2();
+    if ((ADC_xy_Data[0] != /*mean value*/) || (ADC_xy_Data[1] != /*mean value*/)){
+        ADC_2_LCD_x = ADC_xy_Data[0];
+        ADC_2_LCD_y = ADC_xy_Data[1];
     }
 
     /*Switch routine*/

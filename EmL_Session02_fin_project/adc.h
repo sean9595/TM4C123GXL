@@ -11,6 +11,8 @@
 #include "main.h"
 
 void ADC0_PortE_Init(void);
-uint32_t ADC0_InSeq3(void);
+void ADC0_InSeq2(void);
+
+uint32_t ADC_xy_Data[2] = {0,0};
 
 #endif /* ADC_H_ */

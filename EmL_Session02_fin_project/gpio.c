@@ -24,5 +24,7 @@ void PortE_Init(void){
     GPIO_PORTE_DEN_R = 0x02;      // 6) disable digital I/O on PE2,3
                                   // enable digital I/O on PE1.
                                   // since we are using 'analog input'
+    GPIO_PORTE_PCTL_R = 0x00000000; //ADC는 이것이 필요없고 GPIO기능에만 필요.
     GPIO_PORTE_AMSEL_R |= 0x0C;   // 7) enable analog functionality on PE2,3
+
 }
