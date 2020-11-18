@@ -14,6 +14,7 @@ void PortA_Init(void){
 }*/
 
 void PortE_Init(void){
+    //Pull-up 혹은 Pull-down 설정 추
     SYSCTL_RCGCADC_R |= 0x0001;   // 1) activate ADC0
     SYSCTL_RCGCGPIO_R |= 0x10;    // 2) activate clock for Port E
     while ((SYSCTL_PRGPIO_R & 0x10) != 0x10)
