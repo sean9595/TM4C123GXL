@@ -10,17 +10,17 @@
 
 #include "main.h"
 
-void ADC_var_Init(void);
-void ADC0_PortE_Init(void);
-void ADC0_InSeq2(volatile uint32_t data[2]);
-
 typedef struct{
     uint32_t x_to_LCD;
     uint32_t y_to_LCD;
-    //volatile uint32_t xy_Data[2];
+    uint32_t xy_Data[2];
 } Data;
 
 Data ADC;
+
+void ADC_var_Init(void);
+void ADC0_PortE_Init(void);
+void ADC0_InSeq2(Data *data);
 
 
 #endif /* ADC_H_ */
