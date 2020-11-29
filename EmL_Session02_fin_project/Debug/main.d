@@ -18,6 +18,10 @@ main.obj: ../sysclk.h
 main.obj: ../systick.h
 main.obj: ../gpio.h
 main.obj: ../adc.h
+main.obj: ../image.h
+main.obj: ../lcd.h
+main.obj: ../nokia5110.h
+main.obj: ../lcd.h
 
 ../main.c: 
 ../main.h: 
@@ -37,3 +41,7 @@ main.obj: ../adc.h
 ../systick.h: 
 ../gpio.h: 
 ../adc.h: 
+../image.h: 
+../lcd.h: 
+../nokia5110.h: 
+../lcd.h: 

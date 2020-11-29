@@ -9,7 +9,9 @@ CMD_SRCS += \
 C_SRCS += \
 ../adc.c \
 ../gpio.c \
+../lcd.c \
 ../main.c \
+../nokia5110.c \
 ../sysclk.c \
 ../systick.c \
 ../tm4c123gh6pm_startup_ccs.c 
@@ -17,7 +19,9 @@ C_SRCS += \
 C_DEPS += \
 ./adc.d \
 ./gpio.d \
+./lcd.d \
 ./main.d \
+./nokia5110.d \
 ./sysclk.d \
 ./systick.d \
 ./tm4c123gh6pm_startup_ccs.d 
@@ -25,7 +29,9 @@ C_DEPS += \
 OBJS += \
 ./adc.obj \
 ./gpio.obj \
+./lcd.obj \
 ./main.obj \
+./nokia5110.obj \
 ./sysclk.obj \
 ./systick.obj \
 ./tm4c123gh6pm_startup_ccs.obj 
@@ -33,7 +39,9 @@ OBJS += \
 OBJS__QUOTED += \
 "adc.obj" \
 "gpio.obj" \
+"lcd.obj" \
 "main.obj" \
+"nokia5110.obj" \
 "sysclk.obj" \
 "systick.obj" \
 "tm4c123gh6pm_startup_ccs.obj" 
@@ -41,7 +49,9 @@ OBJS__QUOTED += \
 C_DEPS__QUOTED += \
 "adc.d" \
 "gpio.d" \
+"lcd.d" \
 "main.d" \
+"nokia5110.d" \
 "sysclk.d" \
 "systick.d" \
 "tm4c123gh6pm_startup_ccs.d" 
@@ -49,7 +59,9 @@ C_DEPS__QUOTED += \
 C_SRCS__QUOTED += \
 "../adc.c" \
 "../gpio.c" \
+"../lcd.c" \
 "../main.c" \
+"../nokia5110.c" \
 "../sysclk.c" \
 "../systick.c" \
 "../tm4c123gh6pm_startup_ccs.c" 

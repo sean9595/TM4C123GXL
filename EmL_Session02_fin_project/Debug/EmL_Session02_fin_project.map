@@ -1,32 +1,33 @@
 ******************************************************************************
                   TI ARM Linker Unix v20.2.1                   
 ******************************************************************************
->> Linked Thu Nov 19 09:46:41 2020
+>> Linked Sun Nov 29 19:28:48 2020
 
 OUTPUT FILE NAME:   <EmL_Session02_fin_project.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00000615
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00000c55
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  000006b6  0003f94a  R  X
-  SRAM                  20000000   00008000  00000211  00007def  RW X
+  FLASH                 00000000   00040000  0000144b  0003ebb5  R  X
+  SRAM                  20000000   00008000  000005bd  00007a43  RW X
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    000006b8   000006b8    r-x
+00000000    00000000    00001450   00001450    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  0000026c    0000026c    0000041a   0000041a    r-x .text
-  00000688    00000688    00000030   00000030    r-- .cinit
-20000000    20000000    00000211   00000000    rw-
-  20000000    20000000    00000200   00000000    rw- .stack
-  20000200    20000200    00000010   00000000    rw- .bss
-  20000210    20000210    00000001   00000000    rw- .data
+  0000026c    0000026c    00000a5a   00000a5a    r-x .text
+  00000cc6    00000cc6    00000755   00000755    r-- .const
+  00001420    00001420    00000030   00000030    r-- .cinit
+20000000    20000000    000005c0   00000000    rw-
+  20000000    20000000    000003bc   00000000    rw- .bss
+  200003bc    200003bc    00000001   00000000    rw- .data
+  200003c0    200003c0    00000200   00000000    rw- .stack
 
 
 SECTION ALLOCATION MAP
@@ -37,42 +38,61 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
 
-.text      0    0000026c    0000041a     
-                  0000026c    000000f4     adc.obj (.text)
-                  00000360    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
-                  000003fc    00000074     sysclk.obj (.text)
-                  00000470    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  000004d8    00000068     gpio.obj (.text)
-                  00000540    0000004c     main.obj (.text)
-                  0000058c    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  000005d0    00000044     systick.obj (.text)
-                  00000614    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
-                  00000648    0000001c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  00000664    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  00000672    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
-                  0000067e    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
-                  00000682    00000004                                   : exit.c.obj (.text:abort:abort)
+.text      0    0000026c    00000a5a     
+                  0000026c    00000550     nokia5110.obj (.text)
+                  000007bc    000000f4     adc.obj (.text)
+                  000008b0    000000d4     main.obj (.text)
+                  00000984    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00000a20    00000074     sysclk.obj (.text)
+                  00000a94    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00000afc    00000068     gpio.obj (.text)
+                  00000b64    00000068     lcd.obj (.text)
+                  00000bcc    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00000c10    00000044     systick.obj (.text)
+                  00000c54    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00000c88    0000001c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00000ca4    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00000cb2    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00000cbe    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000cc2    00000004                                   : exit.c.obj (.text:abort:abort)
 
-.cinit     0    00000688    00000030     
-                  00000688    0000000c     (__TI_handler_table)
-                  00000694    00000004     --HOLE-- [fill = 0]
-                  00000698    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  000006a0    00000005     (.cinit..data.load) [load image, compression = lzss]
-                  000006a5    00000003     --HOLE-- [fill = 0]
-                  000006a8    00000010     (__TI_cinit_table)
+.const     0    00000cc6    00000755     
+                  00000cc6    000001e0     nokia5110.obj (.const:ASCII)
+                  00000ea6    000000d7     main.obj (.const:.string:PlayerShip0)
+                  00000f7d    000000c7     main.obj (.const:.string:SmallEnemy10PointA)
+                  00001044    000000c7     main.obj (.const:.string:SmallEnemy20PointA)
+                  0000110b    000000c7     main.obj (.const:.string:SmallEnemy20PointB)
+                  000011d2    000000c7     main.obj (.const:.string:SmallEnemy30PointA)
+                  00001299    000000c7     main.obj (.const:.string:SmallEnemy30PointB)
+                  00001360    000000b3     main.obj (.const:.string:Bunker0)
+                  00001413    00000008     nokia5110.obj (.const:.string:BitMask)
+
+.cinit     0    00001420    00000030     
+                  00001420    0000000c     (__TI_handler_table)
+                  0000142c    00000004     --HOLE-- [fill = 0]
+                  00001430    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00001438    00000005     (.cinit..data.load) [load image, compression = lzss]
+                  0000143d    00000003     --HOLE-- [fill = 0]
+                  00001440    00000010     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
 
-.bss       0    20000200    00000010     UNINITIALIZED
-                  20000200    00000010     (.common:ADC)
+.bss       0    20000000    000003bc     UNINITIALIZED
+                  20000000    000001f8     (.common:Screen)
+                  200001f8    000001a4     (.common:PlotImage)
+                  2000039c    00000010     (.common:ADC)
+                  200003ac    00000004     (.common:X)
+                  200003b0    00000004     (.common:Ymax)
+                  200003b4    00000004     (.common:Ymin)
+                  200003b8    00000004     (.common:Yrange)
 
-.data      0    20000210    00000001     UNINITIALIZED
-                  20000210    00000001     main.obj (.data)
+.data      0    200003bc    00000001     UNINITIALIZED
+                  200003bc    00000001     main.obj (.data)
 
-.stack     0    20000000    00000200     UNINITIALIZED
-                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
-                  20000004    000001fc     --HOLE--
+.stack     0    200003c0    00000200     UNINITIALIZED
+                  200003c0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  200003c4    000001fc     --HOLE--
 
 __llvm_prf_cnts 
 *          0    20000000    00000000     UNINITIALIZED
@@ -82,14 +102,16 @@ MODULE SUMMARY
        Module                         code   ro data   rw data
        ------                         ----   -------   -------
     ./
+       nokia5110.obj                  1360   488       436    
+       main.obj                       212    1389      1      
        tm4c123gh6pm_startup_ccs.obj   12     620       0      
+       lcd.obj                        104    0         504    
        adc.obj                        244    0         16     
        sysclk.obj                     116    0         0      
        gpio.obj                       104    0         0      
-       main.obj                       76     0         1      
        systick.obj                    68     0         0      
     +--+------------------------------+------+---------+---------+
-       Total:                         620    620       17     
+       Total:                         2220   2497      957    
                                                               
     /Applications/ti/ccs1000/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
        memcpy_t2.asm.obj              156    0         0      
@@ -106,19 +128,19 @@ MODULE SUMMARY
        Stack:                         0      0         512    
        Linker Generated:              0      41        0      
     +--+------------------------------+------+---------+---------+
-       Grand Total:                   1050   661       529    
+       Grand Total:                   2650   2538      1469   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 000006a8 records: 2, size/record: 8, table size: 16
-	.bss: load addr=00000698, load size=00000008 bytes, run addr=20000200, run size=00000010 bytes, compression=zero_init
-	.data: load addr=000006a0, load size=00000005 bytes, run addr=20000210, run size=00000001 bytes, compression=lzss
+__TI_cinit_table @ 00001440 records: 2, size/record: 8, table size: 16
+	.bss: load addr=00001430, load size=00000008 bytes, run addr=20000000, run size=000003bc bytes, compression=zero_init
+	.data: load addr=00001438, load size=00000005 bytes, run addr=200003bc, run size=00000001 bytes, compression=lzss
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00000688 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00001420 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -128,19 +150,21 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address   name                          
 -------   ----                          
-20000200  ADC                           
+2000039c  ADC                           
 UNDEFED   ADC0Seq0_Handler              
 UNDEFED   ADC0Seq1_Handler              
 UNDEFED   ADC0Seq2_Handler              
 UNDEFED   ADC0Seq3_Handler              
-000002e9  ADC0_InSeq2                   
-00000287  ADC0_PortE_Init               
+00000839  ADC0_InSeq2                   
+000007d7  ADC0_PortE_Init               
 UNDEFED   ADC1Seq0_Handler              
 UNDEFED   ADC1Seq1_Handler              
 UNDEFED   ADC1Seq2_Handler              
 UNDEFED   ADC1Seq3_Handler              
-0000026d  ADC_var_Init                  
-00000683  C$$EXIT                       
+000007bd  ADC_var_Init                  
+00001413  BitMask                       
+00001360  Bunker0                       
+00000cc3  C$$EXIT                       
 UNDEFED   CAN0_Handler                  
 UNDEFED   CAN1_Handler                  
 UNDEFED   CAN2_Handler                  
@@ -148,7 +172,7 @@ UNDEFED   Comp0_Handler
 UNDEFED   Comp1_Handler                 
 UNDEFED   Comp2_Handler                 
 UNDEFED   DebugMon_Handler              
-00000541  EnableInterrupts              
+000008b1  EnableInterrupts              
 UNDEFED   Ethernet_Handler              
 UNDEFED   ExtBus_Handler                
 UNDEFED   FPU_Handler                   
@@ -193,7 +217,22 @@ UNDEFED   I2C3_Handler
 UNDEFED   I2C4_Handler                  
 UNDEFED   I2C5_Handler                  
 UNDEFED   I2S0_Handler                  
+00000477  LCD_PlotClear                 
+0000056d  LCD_PlotNext                  
+000004e1  LCD_PlotPoint                 
+000005ad  LCD_ShowPlot                  
+00000b65  LCD_WriteCommand              
+00000b97  LCD_WriteData                 
 UNDEFED   LPC0_Handler                  
+00000419  Nokia5110_Clear               
+00000781  Nokia5110_ClearBuffer         
+000007ab  Nokia5110_DisplayBuffer       
+00000445  Nokia5110_DrawFullImage       
+0000026d  Nokia5110_Init                
+0000037b  Nokia5110_OutChar             
+000003bb  Nokia5110_OutString           
+000005f9  Nokia5110_PrintBMP            
+000003dd  Nokia5110_SetCursor           
 UNDEFED   PECI0_Handler                 
 UNDEFED   PWM0Fault_Handler             
 UNDEFED   PWM0Generator0_Handler        
@@ -206,21 +245,29 @@ UNDEFED   PWM1Generator1_Handler
 UNDEFED   PWM1Generator2_Handler        
 UNDEFED   PWM1Generator3_Handler        
 UNDEFED   PendSV_Handler                
-000004d9  PortE_Init                    
+00000ea6  PlayerShip0                   
+200001f8  PlotImage                     
+00000afd  PortE_Init                    
 UNDEFED   Quadrature0_Handler           
 UNDEFED   Quadrature1_Handler           
 UNDEFED   Quadrature2_Handler           
-00000673  ResetISR                      
+00000cb3  ResetISR                      
 UNDEFED   SSI0_Handler                  
 UNDEFED   SSI1_Handler                  
 UNDEFED   SSI2_Handler                  
 UNDEFED   SSI3_Handler                  
 UNDEFED   SVC_Handler                   
-000003fd  SYSCLK_80MHz                  
+00000a21  SYSCLK_80MHz                  
+20000000  Screen                        
+00000f7d  SmallEnemy10PointA            
+00001044  SmallEnemy20PointA            
+0000110b  SmallEnemy20PointB            
+000011d2  SmallEnemy30PointA            
+00001299  SmallEnemy30PointB            
 UNDEFED   SysCtl_Handler                
-20000210  SysTick_Flag                  
-00000573  SysTick_Handler               
-000005d1  SysTick_Init                  
+200003bc  SysTick_Flag                  
+0000094d  SysTick_Handler               
+00000c11  SysTick_Init                  
 UNDEFED   Timer0A_Handler               
 UNDEFED   Timer0B_Handler               
 UNDEFED   Timer1A_Handler               
@@ -255,38 +302,42 @@ UNDEFED   WideTimer4A_Handler
 UNDEFED   WideTimer4B_Handler           
 UNDEFED   WideTimer5A_Handler           
 UNDEFED   WideTimer5B_Handler           
-20000200  __STACK_END                   
+200003ac  X                             
+200003b0  Ymax                          
+200003b4  Ymin                          
+200003b8  Yrange                        
+200005c0  __STACK_END                   
 00000200  __STACK_SIZE                  
-20000200  __STACK_TOP                   
-000006a8  __TI_CINIT_Base               
-000006b8  __TI_CINIT_Limit              
-00000688  __TI_Handler_Table_Base       
-00000694  __TI_Handler_Table_Limit      
-0000058d  __TI_auto_init_nobinit_nopinit
-00000471  __TI_decompress_lzss          
-00000665  __TI_decompress_none          
+200005c0  __STACK_TOP                   
+00001440  __TI_CINIT_Base               
+00001450  __TI_CINIT_Limit              
+00001420  __TI_Handler_Table_Base       
+0000142c  __TI_Handler_Table_Limit      
+00000bcd  __TI_auto_init_nobinit_nopinit
+00000a95  __TI_decompress_lzss          
+00000ca5  __TI_decompress_none          
 ffffffff  __TI_pprof_out_hndl           
 ffffffff  __TI_prof_data_size           
 ffffffff  __TI_prof_data_start          
 00000000  __TI_static_base__            
-00000649  __TI_zero_init_nomemset       
-00000361  __aeabi_memcpy                
-00000361  __aeabi_memcpy4               
-00000361  __aeabi_memcpy8               
+00000c89  __TI_zero_init_nomemset       
+00000985  __aeabi_memcpy                
+00000985  __aeabi_memcpy4               
+00000985  __aeabi_memcpy8               
 ffffffff  __binit__                     
 ffffffff  __c_args__                    
 UNDEFED   __mpu_init                    
-20000000  __stack                       
+200003c0  __stack                       
 20000000  __start___llvm_prf_cnts       
 20000000  __stop___llvm_prf_cnts        
-00000615  _c_int00_noargs               
+00000c55  _c_int00_noargs               
 UNDEFED   _system_post_cinit            
-0000067f  _system_pre_init              
-00000683  abort                         
+00000cbf  _system_pre_init              
+00000cc3  abort                         
 ffffffff  binit                         
 00000000  g_pfnVectors                  
-00000545  main                          
-00000361  memcpy                        
+000008b5  main                          
+00000985  memcpy                        
 UNDEFED   uDMA_Error                    
 UNDEFED   uDMA_Handler                  
 
@@ -298,39 +349,68 @@ address   name
 00000000  __TI_static_base__            
 00000000  g_pfnVectors                  
 00000200  __STACK_SIZE                  
-0000026d  ADC_var_Init                  
-00000287  ADC0_PortE_Init               
-000002e9  ADC0_InSeq2                   
-00000361  __aeabi_memcpy                
-00000361  __aeabi_memcpy4               
-00000361  __aeabi_memcpy8               
-00000361  memcpy                        
-000003fd  SYSCLK_80MHz                  
-00000471  __TI_decompress_lzss          
-000004d9  PortE_Init                    
-00000541  EnableInterrupts              
-00000545  main                          
-00000573  SysTick_Handler               
-0000058d  __TI_auto_init_nobinit_nopinit
-000005d1  SysTick_Init                  
-00000615  _c_int00_noargs               
-00000649  __TI_zero_init_nomemset       
-00000665  __TI_decompress_none          
-00000673  ResetISR                      
-0000067f  _system_pre_init              
-00000683  C$$EXIT                       
-00000683  abort                         
-00000688  __TI_Handler_Table_Base       
-00000694  __TI_Handler_Table_Limit      
-000006a8  __TI_CINIT_Base               
-000006b8  __TI_CINIT_Limit              
-20000000  __stack                       
+0000026d  Nokia5110_Init                
+0000037b  Nokia5110_OutChar             
+000003bb  Nokia5110_OutString           
+000003dd  Nokia5110_SetCursor           
+00000419  Nokia5110_Clear               
+00000445  Nokia5110_DrawFullImage       
+00000477  LCD_PlotClear                 
+000004e1  LCD_PlotPoint                 
+0000056d  LCD_PlotNext                  
+000005ad  LCD_ShowPlot                  
+000005f9  Nokia5110_PrintBMP            
+00000781  Nokia5110_ClearBuffer         
+000007ab  Nokia5110_DisplayBuffer       
+000007bd  ADC_var_Init                  
+000007d7  ADC0_PortE_Init               
+00000839  ADC0_InSeq2                   
+000008b1  EnableInterrupts              
+000008b5  main                          
+0000094d  SysTick_Handler               
+00000985  __aeabi_memcpy                
+00000985  __aeabi_memcpy4               
+00000985  __aeabi_memcpy8               
+00000985  memcpy                        
+00000a21  SYSCLK_80MHz                  
+00000a95  __TI_decompress_lzss          
+00000afd  PortE_Init                    
+00000b65  LCD_WriteCommand              
+00000b97  LCD_WriteData                 
+00000bcd  __TI_auto_init_nobinit_nopinit
+00000c11  SysTick_Init                  
+00000c55  _c_int00_noargs               
+00000c89  __TI_zero_init_nomemset       
+00000ca5  __TI_decompress_none          
+00000cb3  ResetISR                      
+00000cbf  _system_pre_init              
+00000cc3  C$$EXIT                       
+00000cc3  abort                         
+00000ea6  PlayerShip0                   
+00000f7d  SmallEnemy10PointA            
+00001044  SmallEnemy20PointA            
+0000110b  SmallEnemy20PointB            
+000011d2  SmallEnemy30PointA            
+00001299  SmallEnemy30PointB            
+00001360  Bunker0                       
+00001413  BitMask                       
+00001420  __TI_Handler_Table_Base       
+0000142c  __TI_Handler_Table_Limit      
+00001440  __TI_CINIT_Base               
+00001450  __TI_CINIT_Limit              
+20000000  Screen                        
 20000000  __start___llvm_prf_cnts       
 20000000  __stop___llvm_prf_cnts        
-20000200  ADC                           
-20000200  __STACK_END                   
-20000200  __STACK_TOP                   
-20000210  SysTick_Flag                  
+200001f8  PlotImage                     
+2000039c  ADC                           
+200003ac  X                             
+200003b0  Ymax                          
+200003b4  Ymin                          
+200003b8  Yrange                        
+200003bc  SysTick_Flag                  
+200003c0  __stack                       
+200005c0  __STACK_END                   
+200005c0  __STACK_TOP                   
 ffffffff  __TI_pprof_out_hndl           
 ffffffff  __TI_prof_data_size           
 ffffffff  __TI_prof_data_start          
@@ -457,4 +537,4 @@ UNDEFED   _system_post_cinit
 UNDEFED   uDMA_Error                    
 UNDEFED   uDMA_Handler                  
 
-[161 symbols]
+[190 symbols]

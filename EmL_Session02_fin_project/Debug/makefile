@@ -10,7 +10,9 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./adc.obj" \
 "./gpio.obj" \
+"./lcd.obj" \
 "./main.obj" \
+"./nokia5110.obj" \
 "./sysclk.obj" \
 "./systick.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
@@ -158,8 +160,8 @@ EmL_Session02_fin_project.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "adc.obj" "gpio.obj" "main.obj" "sysclk.obj" "systick.obj" "tm4c123gh6pm_startup_ccs.obj" 
-	-$(RM) "adc.d" "gpio.d" "main.d" "sysclk.d" "systick.d" "tm4c123gh6pm_startup_ccs.d" 
+	-$(RM) "adc.obj" "gpio.obj" "lcd.obj" "main.obj" "nokia5110.obj" "sysclk.obj" "systick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+	-$(RM) "adc.d" "gpio.d" "lcd.d" "main.d" "nokia5110.d" "sysclk.d" "systick.d" "tm4c123gh6pm_startup_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
